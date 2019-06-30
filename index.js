@@ -59,25 +59,44 @@ async function handleMessage(sender_psid, received_message) {
 
     let user = await _getUser(sender_psid);
 
+    switch (received_message.text) {
+        case 'Γειά':
+        case 'Καλησπέρα':
+        case 'καλησπέρα':
+        case 'καλησπερα':
+        case 'Καλημέρα':
+        case 'καλημέρα':
+        case 'καλημερα':
+        case 'Γεια σας':
+        case 'hello':
+        case 'hi':
+        case 'Hi':
+        case 'Hello':
+            response = {
+                "text": `${received_message.text} ${user}. Καλωσήρθατε στην μηχανή αναζήτησης πακέτων του 18-24 Travel! Είστε έτοιμος/η για να ξεκινήσουμε την αναζήτηση; `,
+                "quick_replies":[
+                    {
+                        "content_type":"text",
+                        "title":"Ναι",
+                        "payload": "<POSTBACK_PAYLOAD>",
+                    },{
+                        "content_type":"text",
+                        "title":"Όχι",
+                        "payload":"<POSTBACK_PAYLOAD>",
+                    }
+                ]
+            };
+
+
+            break;
+
+        default:
+            response = {
+                "text": `Καλωσήρθατε ${user} στην μηχανή αναζήτησης πακέτων του 18-24 Travel!`
+            }
+    }
+
     if (received_message.text) {
-
-        switch (received_message.text) {
-            case 'Γειά':
-            case 'Καλησπέρα':
-            case 'Καλημέρα':
-            case 'Γεια σας':
-            case 'hello':
-            case 'hi':
-                response = {
-                    "text": `${received_message.text} ${user}. Καλωσήρθατε στην μηχανή αναζήτησης πακέτων του 18-24 Travel!`
-                };
-                break;
-
-            default:
-                response = {
-                    "text": `Καλωσήρθατε ${user} στην μηχανή αναζήτησης πακέτων του 18-24 Travel!`
-                }
-        }
 
     } else if (received_message.attachments) {
         // Get the URL of the message attachment
@@ -113,6 +132,7 @@ async function handleMessage(sender_psid, received_message) {
 
 
 function handlePostback(sender_psid, received_postback) {
+    console.log(received_postback);
 
 }
 
