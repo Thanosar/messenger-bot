@@ -19,11 +19,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="69" column="24" lean-forward="true" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+            <state relative-caret-position="216">
+              <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
               <folding>
-                <element signature="e#470#1042#0" />
-                <element signature="e#1128#1514#0" />
+                <element signature="n#!!block;n#handlePostback#0" />
                 <element signature="n#!!block;n#_getUser#0" />
               </folding>
             </state>
@@ -52,6 +51,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>handlePostback</find>
+      <find>_getAreas</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -85,6 +85,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,7 +97,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -133,12 +133,21 @@
       <option name="presentableId" value="Default" />
       <updated>1561795415104</updated>
       <workItem from="1561795416760" duration="17221000" />
-      <workItem from="1561916235403" duration="6436000" />
+      <workItem from="1561916235403" duration="13326000" />
+      <workItem from="1562182252855" duration="2702000" />
     </task>
+    <task id="LOCAL-00001" summary="added quick reply message">
+      <created>1561925704082</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561925704082</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23657000" />
+    <option name="totallyTimeSpent" value="33249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1987" y="27" width="1853" height="1053" extended-state="6" />
@@ -189,6 +198,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added quick reply message" />
+    <option name="LAST_COMMIT_MESSAGE" value="added quick reply message" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/takis.js" />
     <entry file="file://$PROJECT_DIR$/index.ts" />
@@ -201,11 +214,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="69" column="24" lean-forward="true" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
+        <state relative-caret-position="216">
+          <caret line="91" column="24" lean-forward="true" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="24" />
           <folding>
-            <element signature="e#470#1042#0" />
-            <element signature="e#1128#1514#0" />
+            <element signature="n#!!block;n#handlePostback#0" />
             <element signature="n#!!block;n#_getUser#0" />
           </folding>
         </state>

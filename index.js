@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const PAGE_ACCESS_TOKEN = 'EAAGc6IGuD6kBAPknO2ZAG19m1UwIrBZCao5BxdtYfoujlr5WPHSBpkFPRRcN67fsQlQN0fOu0qrgJsj9Lr4v1fS5EiYrck2R0jpmAWSALBOMprO1UoNriZAEYEJSL6ZCmPa48L6xsai1cAImxB4B45DQ229ZBNlXv6BZAdPSQZAmFh0B9ZADMIdqglftZCBIjgHcZD';
-
+const areas = [];
 const app = express();
 
 app.use(bodyParser.json());
@@ -87,9 +87,17 @@ async function handleMessage(sender_psid, received_message) {
                 ]
             };
 
-
             break;
-
+        case 'Όχι':
+            response = {
+                "text": "Πως αλλιώς θα μπορούσαμε να σας βοηθήσουμε; "
+            };
+            break;
+        case "Ναι":
+            response = {
+                "text": "Πάμε λίγο"
+        };
+            break;
         default:
             response = {
                 "text": `Καλωσήρθατε ${user} στην μηχανή αναζήτησης πακέτων του 18-24 Travel!`
@@ -127,9 +135,9 @@ async function handleMessage(sender_psid, received_message) {
             }
         }
     }
+
     callSendAPI(sender_psid, response);
 }
-
 
 function handlePostback(sender_psid, received_postback) {
     console.log(received_postback);
@@ -152,6 +160,7 @@ function callSendAPI(sender_psid, response) {
         .catch((e) => {
             console.log(console.error("Unable to send message:" + e));
         });
+
 }
 
 async function _getUser(id) {
@@ -166,6 +175,13 @@ async function _getUser(id) {
         })
         .catch(e => console.log(e));
     return user ? user.first_name + ' ' + user.last_name : "";
+}
+
+async function _getAreas() {
+    await axios.get(`https://www.18-24.gr/json/destinations-builder.json`)
+        .then(res => {
+            return res.data;
+        });
 }
 
 app.listen(3000, () => {
